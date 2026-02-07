@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>危机求生 - Crisis Survival</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=ZCOOL+KuaiLe&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 首页 - 输入昵称 -->
+        <div id="home-screen" class="screen active">
+            <div class="logo">☠️</div>
+            <h1>危机求生</h1>
+            <p class="subtitle">Crisis Survival</p>
+
+            <div class="input-group">
+                <input type="text" id="player-name" placeholder="输入你的昵称" maxlength="10">
+                <div class="mode-buttons">
+                    <button id="solo-btn" class="btn-primary">🤖 单人模式</button>
+                    <button id="multi-btn" class="btn-secondary">👥 多人模式</button>
+                </div>
+            </div>
+
+            <p class="hint">单人模式：与AI对战 · 多人模式：匹配玩家</p>
+        </div>
+
+        <!-- 匹配中 -->
+        <div id="matching-screen" class="screen">
+            <div class="spinner"></div>
+            <h2>匹配中...</h2>
+            <p>当前队列: <span id="queue-size">1</span> 人</p>
+            <p class="timer">剩余 <span id="match-timer">60</span> 秒</p>
+            <button id="cancel-match-btn" class="btn-secondary">取消匹配</button>
+        </div>
+
+        <!-- 游戏界面 -->
+        <div id="game-screen" class="screen">
+            <header>
+                <div class="round-info">第 <span id="current-round">1</span> / <span id="max-rounds">3</span> 轮</div>
+                <div class="phase-name" id="phase-name">等待开始</div>
+                <button id="exit-btn" class="exit-btn">退出游戏</button>
+            </header>
+
+            <!-- 旁白状态栏 -->
+            <div id="narrator-status" class="narrator-status">
+                <span class="narrator-icon">🎭</span>
+                <span id="narrator-text">欢迎来到危机求生！</span>
+            </div>
+
+            <!-- 玩家列表 -->
+            <div id="players-bar">
+                <!-- 动态填充 -->
+            </div>
+
+            <!-- 主内容区 -->
+            <main id="game-content">
+                <!-- 危机阶段 -->
+                <div id="crisis-phase" class="phase-content">
+                    <h2>选择你的关键词</h2>
+                    <p class="description">选一个元素，AI 会把所有人的选择融合成本轮危机</p>
+                    <div id="keyword-options" class="options-grid">
+                        <!-- 动态填充 -->
+                    </div>
+                </div>
+
+                <!-- 危机展示 -->
+                <div id="crisis-reveal" class="phase-content">
+                    <div class="crisis-name" id="crisis-name">???</div>
+                    <div class="crisis-scenario" id="crisis-scenario">正在生成危机...</div>
+                </div>
+
+                <!-- 抢夺阶段 -->
+                <div id="scavenge-phase" class="phase-content">
+                    <h2>🎒 抢夺物资！</h2>
+                    <p class="description">点击抢夺，手慢无！</p>
+                    <div id="items-grid" class="items-grid">
+                        <!-- 动态填充 -->
+                    </div>
+                </div>
+
+                <!-- 判定阶段 -->
+                <div id="judgment-phase" class="phase-content">
+                    <h2>⚖️ 命运审判</h2>
+                    <div id="judgment-results" class="judgment-results">
+                        <!-- 动态填充 -->
+                    </div>
+                </div>
+
+                <!-- 回合结束 -->
+                <div id="round-end" class="phase-content">
+                    <h2>📊 回合结束</h2>
+                    <div id="round-scores" class="scores-list">
+                        <!-- 动态填充 -->
+                    </div>
+                </div>
+
+                <!-- 游戏结束 -->
+                <div id="game-over" class="phase-content">
+                    <h1>🏆 游戏结束</h1>
+                    <div id="final-rankings" class="rankings">
+                        <!-- 动态填充 -->
+                    </div>
+                    <button id="play-again-btn" class="btn-primary">再来一局</button>
+                </div>
+            </main>
+
+            <!-- 消息日志 -->
+            <div id="message-log">
+                <!-- 动态填充 -->
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
