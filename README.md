@@ -34,7 +34,7 @@ python -m pip install -r requirements.txt
 ```
 
 ## 3) 配置 DEEPSEEK_API_KEY（推荐）
-1.参数在 `config.py`（回合数、人数、模型名、base_url 等）。
+1.参数在 config.py文件中（包括回合数、人数、模型名、base_url 等）。
 只需要在这里面调整deepseek的API key就可以使用了,其他想改的话，可以自己修改。
 
 2.为安全起见，仓库里不会默认写死 Key，也可用环境变量配置。
